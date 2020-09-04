@@ -13,6 +13,7 @@ import * as Composition from './pages/Composition.mdx';
 import * as Debugging from './pages/Debugging.mdx';
 import * as Layout from './pages/Layout.mdx';
 import * as ComponentArchitecture from './pages/ComponentArchitecture.mdx';
+import * as StylesOverrides from './pages/StylesOverrides.mdx';
 import Accessibility from './views/Accessibility';
 import Colors from './views/Colors';
 import ColorPalette from './views/ColorPalette';
@@ -35,6 +36,7 @@ import FocusZone from './views/FocusZoneDoc';
 import FocusTrapZone from './views/FocusTrapZoneDoc';
 import AutoFocusZone from './views/AutoFocusZoneDoc';
 import { LazyWithBabel } from './components/ComponentDoc/LazyWithBabel';
+import TextAreaAutoSize from './prototypes/TextAreaAutoSize';
 
 const _Builder = React.lazy(async () => ({
   default: (await import(/* webpackChunkName: "builder" */ '@fluentui/react-builder')).Builder,
@@ -141,6 +143,7 @@ const Routes = () => (
                 <Route exact path="/prototype-alerts" component={AlertsPrototype} />
                 <Route exact path="/prototype-editor-toolbar" component={EditorToolbarPrototype} />
                 <Route exact path="/prototype-hexagonal-avatar" component={HexagonalAvatarPrototype} />
+                <Route exact path="/prototype-text-area-autosize" component={TextAreaAutoSize} />
                 <Route exact path="/prototype-table" component={TablePrototype} />
                 <Route exact path="/prototype-nested-popups-and-dialogs" component={NestedPopupsAndDialogsPrototype} />
                 <Route exact path="/prototype-form-validation" component={FormValidationPrototype} />
@@ -173,6 +176,9 @@ const Routes = () => (
                 </Route>
                 <Route exact path="/theming-specification">
                   <MarkdownPage page={ThemingSpecification} />
+                </Route>
+                <Route exact path="/styles-overrides">
+                  <MarkdownPage page={StylesOverrides} />
                 </Route>
                 <Route exact path="/integrate-custom-components" component={IntegrateCustomComponents} />
                 <Route exact path="/performance" component={Performance} />
